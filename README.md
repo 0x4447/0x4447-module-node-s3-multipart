@@ -16,15 +16,11 @@ n/a
 
 ## Events
 
-### Progress
-
+### Selection
 ```javascript
-s3mm.on('progress', function(progress) {
+s3mm.on('selection', function(selection) {
 
-    console.log(progress.info.file.name);
-    console.log(progress.data.uploaded);
-    console.log(progress.chunk.peace);
-    console.log(progress.upload.speed);
+    console.log(selection.file.list);
 
 });
 ```
@@ -41,6 +37,19 @@ s3mm.on('info', function(info) {
 });
 ```
 
+### Progress
+
+```javascript
+s3mm.on('progress', function(progress) {
+
+    console.log(progress.info.file.name);
+    console.log(progress.data.uploaded);
+    console.log(progress.chunk.peace);
+    console.log(progress.upload.speed);
+
+});
+```
+
 ### Done
 ```javascript
 s3mm.on('done', function(done) {
@@ -51,11 +60,4 @@ s3mm.on('done', function(done) {
 });
 ```
 
-### Selection
-```javascript
-s3mm.on('selection', function(selection) {
 
-    console.log(selection.file.list);
-
-});
-```
